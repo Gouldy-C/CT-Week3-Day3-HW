@@ -1,4 +1,4 @@
-def toh(n, source, target, auxiliary):
+def toh(n, source, auxiliary, target):
     """
     Input: 2
     1 from source to auxiliary
@@ -31,18 +31,18 @@ def toh(n, source, target, auxiliary):
     2 from source to target
     1 from auxiliary to target
     """
-    if n == 1: print(f'Disc {n} from {source} to {target}')
+    if n == 1: print(f'{(source,target)}')
     else:
-        toh(n-1, source, auxiliary, target)
-        print(f'Disc {n} from {source} to {target}')
-        toh(n-1,auxiliary, target, source)
+        toh(n-1, source, target, auxiliary)
+        print(f'{(source,target)}')
+        toh(n-1,auxiliary, source, target)
 
 
-toh(1, 'source', 'target', 'auxiliary')
+toh(1, 'A', 'B', 'C')
 print('')
-toh(2, 'source', 'target', 'auxiliary')
+toh(2, 'A', 'B', 'C')
 print('')
-toh(3, 'source', 'target', 'auxiliary')
+toh(3, 'A', 'B', 'C')
 print('')
-toh(4, 'source', 'target', 'auxiliary')
+toh(4, 'A', 'B', 'C')
 print('')
