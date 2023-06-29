@@ -1,4 +1,4 @@
-def toh(n, source, auxiliary, target):
+def toh(n, source, target, auxiliary):
     """
     Input: 2
     1 from source to auxiliary
@@ -33,16 +33,16 @@ def toh(n, source, auxiliary, target):
     """
     if n == 1: print(f'{(source,target)}')
     else:
-        toh(n-1, source, target, auxiliary)
+        toh(n-1, source, auxiliary, target)
         print(f'{(source,target)}')
-        toh(n-1,auxiliary, source, target)
+        toh(n-1,auxiliary, target, source)
 
 
-toh(1, 'A', 'B', 'C')
+toh(1, 'A', 'C', 'B')
 print('')
-toh(2, 'A', 'B', 'C')
+toh(2, 'A', 'C', 'B')
 print('')
-toh(3, 'A', 'B', 'C')
+toh(3, 'A', 'C', 'B')
 print('')
-toh(4, 'A', 'B', 'C')
+toh(4, 'A', 'C', 'B')
 print('')
